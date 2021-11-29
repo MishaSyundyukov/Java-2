@@ -1,0 +1,30 @@
+package pegorov.MyHW;
+
+import java.util.*;
+
+
+public class Team {
+
+    private String nameTeam = "unknown";
+    Action[] teams = new Action[4];
+    public Action[] teamTerra = new Action[4];
+    Random random = new Random();
+
+    public Team(String nameTeam) {
+        this.nameTeam = nameTeam;
+        for(int i = 0; i < 4; i++){
+            int ran = random.nextInt(3);
+            teamTerra[i] = teams[ran];
+        }
+    }
+
+    public void printInformationAboutTheTeam() {
+        System.out.println("Team: " + nameTeam);
+        for(Action a : teamTerra) {
+            System.out.println(a);
+            }
+        System.out.println();
+    }
+
+
+}
